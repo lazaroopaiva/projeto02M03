@@ -8,4 +8,3 @@ route.put('/update/:id', controllerTarefa.updateTarefaController);
 route.delete('/delete/:id', controllerTarefa.deletetarefaController);
 
 module.exports = route;
-

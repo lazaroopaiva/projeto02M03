@@ -32,7 +32,7 @@ const createtarefaController = async (req, res) => {
   res.send(novaTarefa);
 };
 
-const updateTarefaController  = async (req, res) => {
+const updateTarefaController = async (req, res) => {
   const idParam = req.params.id;
   const tarefaEditada = req.body;
   console.log();
@@ -40,7 +40,6 @@ const updateTarefaController  = async (req, res) => {
     return res.status(400).send({ message: 'Id inválido' });
   }
   if (!tarefaEditada || !tarefaEditada.tarefa || !tarefaEditada.descricao) {
-
     return res.status(400).send({ message: 'Envie os dois campos da tarefa!' });
   }
 
@@ -55,9 +54,7 @@ const updateTarefaController  = async (req, res) => {
 const deletetarefaController = async (req, res) => {
   const idParam = req.params.id;
   if (!mongoose.Types.ObjectId.isValid(idParam)) {
-    
     return res.status(400).send({ message: 'Id inválido' });
-  
   }
   const escolhaTarefa = await tarefaServices.deleteTarefaServices(idParam);
   if (!escolhaTarefa) {
