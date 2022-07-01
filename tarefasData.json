@@ -1,0 +1,20 @@
+[
+   
+     { "tarefa": "Faxina",
+      "descricao": "Varrer a casa, organizar os móveis e retirar o lixo."
+    },
+    {
+        "tarefa": "Lavar o carro",
+        "descricao": "Lavar por fora e higienizar o carro por dentro"
+
+    },
+    {
+        "tarefa": "Banho nos pets",
+        "descricao":"Banhar e secar os pets e não permitir que eles entrem em casa até que estejam totalmente secos"
+    },
+    {
+        "tarefa": "Marmitas",
+        "descricao": "Cozinhar uma boa quantidade de comida e separa-la em marmitas para comer durante a semana "
+    }
+]
+

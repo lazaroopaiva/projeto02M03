@@ -1,28 +1,30 @@
-const findAllTarefaServices = () => {
+const { models } = require('mongoose');
+const Tarefa = require('../models/Tarefas')
+
+const findAllTarefaServices = async () => {
+    const tarefas = await Tarefa.find();
+    console.log(tarefas)
   return tarefas;
+  
 };
 
-const findByIdtarefaServices = (Id) => {
-  return tarefas.find((tarefa) => tarefa.id == Id);
+const findByIdtarefaServices = async (Id) => {
+ const oneTarefa = await Tarefa.findById(Id);
+ return oneTarefa
 };
 
-const createTarefaServices = (novaTarefa) => {
-  const newId = tarefas.length + 1;
-  novaTarefa.id = newId;
-  tarefas.push(novaTarefa);
-  return novaTarefa;
+const createTarefaServices = async (novaTarefa) => {
+  const createdTarefa = await Tarefa.create(novaTarefa);
+  return createdTarefa
 };
 
-const updatetarefaServices = (id, tarefaEditada) => {
-  tarefaEditada['id'] = id;
-  const tarefasIndex = terefa.findIndex((tarefa) => tarefa.id == id);
-  tarefas[tarefasIndex] = tarefaEditada;
-  return tarefaEditada;
+const updatetarefaServices = async (id, tarefaEditada) => {
+const updateTarefa = await Tarefa.findByIdAndUpdate(id, tarefaEditada);
+return updateTarefa
 };
 
-const deleteTarefaServices = (id) => {
-  const tarefaIndex = tarefas.findiIndex((tarefa) => tarefa.id == id);
-  return tarefas.splice(tarefaIndex, 1);
+const deleteTarefaServices = async (id) => {
+return await Tarefa.findByIdAndDelete(id)
 };
 
 module.exports = {
